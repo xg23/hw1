@@ -1,4 +1,4 @@
-Homework 1 - [Your team name here]
+Homework 1 - [Xiaoshu Gui]
 ========================================================
 
 ### Task 1 - Implementation
@@ -12,9 +12,18 @@ and your writeup matter for your overall grade.
 -->
 
 ```{r}
-fizzbuzz = function(v)
-{
-
+fizzbuzz = function(x)
+{ if (any(is.numeric(x))== F)
+    print("woops")
+  if(any(is.numeric(x)) == T)
+ for(i in x){
+    if(i %% 3 == 0)
+      print("Fizz")
+   else if (i %% 5 ==0)
+      print("Buzz")
+   else if(i %% 15 == 0)
+      print("FizzBuzz")
+   else print(i)}
 }
 ```
 
