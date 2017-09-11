@@ -12,19 +12,23 @@ and your writeup matter for your overall grade.
 -->
 
 ```{r}
-fizzbuzz = function(x)
-{ if (any(is.numeric(x))== F)
-    print("woops")
-  if(any(is.numeric(x)) == T)
- for(i in x){
-    if(i %% 3 == 0)
-      print("Fizz")
-   else if (i %% 5 ==0)
-      print("Buzz")
-   else if(i %% 15 == 0)
+fizzbuzz = function(x){   # First Check whether the input is numeric
+  if (any(!is.numeric(x))){ # If the input contains elements that are nonnumeric, the function will not return any result, but print oops.
+    print("oops")}
+    else {     # For inputs that are not multiples of 3 and 5, print the numbers on thier own
+    for(i in x){  # use a for loop in case the input is a series of numbers instead of one.
+    if (!isTRUE(any(i %% 3 == 0)) & !isTRUE(any(i %% 5 == 0))) # isTRUE solves the problem of NA
+          print(i)
+   else if(i %% 15 == 0)  # numbers which are both multiples of 3 and 5, implying that they are multiples of 3*5 = 15. Pirnt FizzBuzz.
       print("FizzBuzz")
-   else print(i)}
-}
+   else if(i %% 3 == 0)  # numbers that are multiples of 3, print Fizz.
+      print("Fizz")
+   else if (i %% 5 == 0) # For numbers that are multiples of 5, print Buzz.
+      print("Buzz")
+  
+   else print(i)
+   }
+}}
 ```
 
 ### Task 2 - Validation
